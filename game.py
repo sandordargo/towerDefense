@@ -5,7 +5,7 @@ import renderer
 class Game:
     def __init__(self):
         self.renderer = renderer.Renderer()
-        self.field = field.Field()
+        self.field = field.Field.generate_field()
 
     def nextTurn(self):
         self.updateField()
