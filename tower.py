@@ -7,8 +7,15 @@ class Tower:
         self.lengthOfRegeneration = lengthOfRegeneration
         self.canFireInNTurns = lengthOfRegeneration
 
+    def __repr__(self):
+        return "Tower(position={}, fire_power={}, " \
+               "lengthOfRegeneration{}, canFireInNTurns={})".format(
+            self.position, self.firePower, self.lengthOfRegeneration, self.canFireInNTurns
+        )
+
     def decreaseNextFireTime(self):
-        self.canFireInNTurns -= 1
+        if self.canFireInNTurns > 1:
+            self.canFireInNTurns -= 1
 
     def fireIfMonsterInRange(self, monsters):
         if not monsters:
@@ -17,8 +24,10 @@ class Tower:
         candidate = monsters[0]
         if abs(self.position - candidate.get_position()) <= self.firePower and self.canFireInNTurns == 0:
             candidate.health_point -= 1
+            if candidate.health_point < 1:
+                print('monster died')
             self.canFireInNTurns = self.lengthOfRegeneration
         return monsters
 
-    def __repr__(self):
+    def __str__(self):
         return str(self.firePower)

@@ -15,6 +15,7 @@ class Game:
         for tower in self.field.towers:
             tower.decreaseNextFireTime()
             self.field.monsters = tower.fireIfMonsterInRange(self.field.monsters)
+        self.field.monsters = [m for m in self.field.monsters if m.health_point > 0]
         for monster in self.field.monsters:
             monster.move_forward()
         if random.random() > 0.7:

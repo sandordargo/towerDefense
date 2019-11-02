@@ -38,7 +38,7 @@ class Field:
                 pos = random.randint(0, 49)
             held_positions.append(pos)
             fp = random.randint(3, 8)
-            lr = random.randint(1, 3)
+            lr = random.randint(0, 2)
             t = tower.Tower(pos, fp, lr)
             towers.append(t)
 
