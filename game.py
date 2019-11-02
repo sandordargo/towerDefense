@@ -1,6 +1,6 @@
 import field
 import renderer
-
+import random
 
 class Game:
     def __init__(self):
@@ -16,6 +16,8 @@ class Game:
             tower.decreaseNextFireTime()
         for monster in self.field.monsters:
             monster.move_forward()
+        if random.random() > 0.7:
+            self.field.add_new_monster()
 
 
 if __name__ == "__main__":
