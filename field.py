@@ -5,6 +5,7 @@ import random
 class Field:
     def __init__(self, towers):
         self.towers = towers
+        self.monsters = []
 
     def get_tower_at_position(self, position):
         for t in self.towers:
