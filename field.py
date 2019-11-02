@@ -1,11 +1,14 @@
 import tower
 import random
-
+import monster
 
 class Field:
     def __init__(self, towers):
         self.towers = towers
         self.monsters = []
+
+    def add_new_monster(self):
+        self.monsters.insert(0, monster.Monster())
 
     def get_tower_at_position(self, position):
         for t in self.towers:
