@@ -14,6 +14,8 @@ class Game:
     def updateField(self):
         for tower in self.field.towers:
             tower.decreaseNextFireTime()
+        for monster in self.field.monsters:
+            monster.move_forward()
 
 
 if __name__ == "__main__":
