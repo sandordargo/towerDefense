@@ -11,6 +11,8 @@ class Tower:
         self.canFireInNTurns -= 1
 
     def fireIfMonsterInRange(self, monsters):
+        if not monsters:
+            return []
         monsters.sort(key=lambda x: self.position - x.get_position())
         candidate = monsters[0]
         if abs(self.position - candidate.get_position()) <= self.firePower and self.canFireInNTurns == 0:
