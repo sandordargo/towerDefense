@@ -22,6 +22,6 @@ class Game:
 
 if __name__ == "__main__":
     game = Game()
-    for _ in range(2):
+    for _ in range(50):
         game.nextTurn()
 

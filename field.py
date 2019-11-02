@@ -22,6 +22,12 @@ class Field:
                 return True
         return False
 
+    def is_monster_at_position(self, position):
+        for m in self.monsters:
+            if m.position == position:
+                return True
+        return False
+
     @staticmethod
     def generate_field():
         held_positions = []
