@@ -12,7 +12,8 @@ class Game:
         self.renderer.render(self.field)
 
     def updateField(self):
-        pass
+        for tower in self.field.towers:
+            tower.decreaseNextFireTime()
 
 
 if __name__ == "__main__":

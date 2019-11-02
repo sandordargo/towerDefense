@@ -5,5 +5,8 @@ class Tower:
         self.lengthOfRegeneration = lengthOfRegeneration
         self.canFireInNTurns = lengthOfRegeneration
 
+    def decreaseNextFireTime(self):
+        self.canFireInNTurns -= 1
+
     def __repr__(self):
         return str(self.firePower)
