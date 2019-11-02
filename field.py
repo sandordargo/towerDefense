@@ -6,6 +6,18 @@ class Field:
     def __init__(self, towers):
         self.towers = towers
 
+    def get_tower_at_position(self, position):
+        for t in self.towers:
+            if t.position == position:
+                return t
+        return None
+
+    def is_tower_at_position(self, position):
+        for t in self.towers:
+            if t.position == position:
+                return True
+        return False
+
     @staticmethod
     def generate_field():
         held_positions = []
@@ -22,4 +34,3 @@ class Field:
 
         field = Field(towers)
         return field
-
