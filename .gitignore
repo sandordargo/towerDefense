@@ -1,0 +1,5 @@
+.eggs
+.idea
+ordinalizer.egg-info/
+venv/
+*.pyc
